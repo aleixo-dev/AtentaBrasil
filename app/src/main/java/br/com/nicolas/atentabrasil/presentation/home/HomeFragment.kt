@@ -1,4 +1,4 @@
-package br.com.nicolas.atentabrasil.ui.home
+package br.com.nicolas.atentabrasil.presentation.home
 
 import android.os.Bundle
 import android.view.LayoutInflater
