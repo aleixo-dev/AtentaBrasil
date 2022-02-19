@@ -1,4 +1,4 @@
-package br.com.nicolas.atentabrasil.ui.home
+package br.com.nicolas.atentabrasil.presentation.home
 
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
