@@ -17,7 +17,7 @@ interface BrazilApi {
 
     @GET(Constants.DDD_ENDPOINT)
     suspend fun fetchDDD(
-        @Path("ddd") ddd: Int
+        @Path("ddd") ddd: String
     ): DirectDialing
 
     @GET(Constants.HOLIDAYS_ENDPOINT)
