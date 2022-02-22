@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="menu_ddd">DDD</string>
+    <string name="menu_cep">CEP</string>
+    <string name="menu_holidays">Feriados Nacionais</string>
+    <string name="menu_fipe">Fipe</string>
+
+</resources>

@@ -10,4 +10,10 @@
     <string name="menu_home">Home</string>
     <string name="menu_gallery">Gallery</string>
     <string name="menu_slideshow">Slideshow</string>
+
+    <string name="menu_ddd">DDD</string>
+    <string name="menu_cep">CEP</string>
+    <string name="menu_holidays">Holidays</string>
+    <string name="menu_fipe">Fipe</string>
+
 </resources>

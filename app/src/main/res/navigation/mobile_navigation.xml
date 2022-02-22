@@ -17,7 +17,7 @@
     <fragment
         android:id="@+id/nav_holidays"
         android:name="br.com.nicolas.atentabrasil.presentation.holidays.HolidaysFragment"
-        android:label="Holidays"
+        android:label="@string/menu_holidays"
         tools:layout="@layout/holidays_fragment" />
     <fragment
         android:id="@+id/nav_fipe"
