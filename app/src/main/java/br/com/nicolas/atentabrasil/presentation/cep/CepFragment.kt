@@ -9,7 +9,7 @@ import androidx.core.widget.addTextChangedListener
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.lifecycleScope
-import br.com.nicolas.atentabrasil.common.CepState
+import br.com.nicolas.atentabrasil.common.DataState
 import br.com.nicolas.atentabrasil.databinding.CepFragmentBinding
 import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.flow.collectLatest
@@ -55,10 +55,10 @@ class CepFragment : Fragment() {
         lifecycleScope.launch {
             viewModel.uiState.collectLatest {
                 binding.includeFlipper.flipperCep.displayedChild = when (it) {
-                    is CepState.Loading -> {
+                    is DataState.Loading -> {
                         FLIPPER_CHILD_LOADING
                     }
-                    is CepState.Success -> {
+                    is DataState.Success -> {
                         binding.apply {
                             it.cep.run {
                                 includeFlipper.textCep.text =
@@ -71,7 +71,7 @@ class CepFragment : Fragment() {
                         }
                         FLIPPER_CHILD_CEP
                     }
-                    is CepState.Error -> {
+                    is DataState.Error -> {
                         FLIPPER_CHILD_ERROR
                     }
                 }
