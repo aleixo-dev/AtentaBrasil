@@ -6,7 +6,9 @@ import br.com.nicolas.atentabrasil.common.DataState
 import br.com.nicolas.atentabrasil.common.Resource
 import br.com.nicolas.atentabrasil.domain.usecase.FetchCepUseCase
 import dagger.hilt.android.lifecycle.HiltViewModel
-import kotlinx.coroutines.flow.*
+import kotlinx.coroutines.flow.MutableStateFlow
+import kotlinx.coroutines.flow.StateFlow
+import kotlinx.coroutines.flow.collect
 import kotlinx.coroutines.launch
 import javax.inject.Inject
 

@@ -34,8 +34,8 @@ object NetworkModule {
     ): OkHttpClient {
         return OkHttpClient.Builder()
             .addInterceptor(loggingInterceptor)
-            .readTimeout(15, TimeUnit.SECONDS)
-            .connectTimeout(15, TimeUnit.SECONDS)
+            .readTimeout(READ_TIMEOUT, TimeUnit.SECONDS)
+            .connectTimeout(CONNECTED_TIMEOUT, TimeUnit.SECONDS)
             .build()
     }
 
@@ -56,4 +56,7 @@ object NetworkModule {
             .build()
             .create(BrazilApi::class.java)
     }
+
+    private const val READ_TIMEOUT = 15L
+    private const val CONNECTED_TIMEOUT = 15L
 }

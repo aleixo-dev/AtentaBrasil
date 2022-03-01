@@ -26,7 +26,5 @@ class FipeFragment : Fragment() {
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
         viewModel = ViewModelProvider(this).get(FipeViewModel::class.java)
-        // TODO: Use the ViewModel
     }
-
 }

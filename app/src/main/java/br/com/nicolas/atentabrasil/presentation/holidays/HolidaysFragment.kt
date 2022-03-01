@@ -26,7 +26,5 @@ class HolidaysFragment : Fragment() {
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
         viewModel = ViewModelProvider(this).get(HolidaysViewModel::class.java)
-        // TODO: Use the ViewModel
     }
-
 }

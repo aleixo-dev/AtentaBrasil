@@ -43,7 +43,7 @@ class CepFragment : Fragment() {
         binding.inputCep.editText?.addTextChangedListener { editable ->
             if (editable.isNullOrEmpty()) {
                 binding.includeFlipper.flipperCep.displayedChild = FLIPPER_CHILD_IMAGE
-            }else if(editable.length >= 8){
+            }else if(editable.length >= LENGTH_CHAR){
                 viewModel.fetchCep(editable.toString())
                 observeChangesInViewModel()
             }
@@ -89,5 +89,8 @@ class CepFragment : Fragment() {
         private const val FLIPPER_CHILD_LOADING = 1
         private const val FLIPPER_CHILD_CEP = 2
         private const val FLIPPER_CHILD_ERROR = 3
+
+        private const val LENGTH_CHAR = 8
+
     }
 }
