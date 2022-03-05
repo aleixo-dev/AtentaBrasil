@@ -1,5 +1,7 @@
 package br.com.nicolas.atentabrasil.presentation.cep
 
+import androidx.lifecycle.LiveData
+import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import br.com.nicolas.atentabrasil.common.DataState
@@ -17,10 +19,10 @@ class CepViewModel @Inject constructor(
     private val fetchCepUseCase: FetchCepUseCase
 ) : ViewModel() {
 
-    private val _uiState = MutableStateFlow<DataState>(
+    private val _uiState = MutableLiveData<DataState>(
         DataState.Loading()
     )
-    val uiState: StateFlow<DataState> = _uiState
+    val uiState: LiveData<DataState> = _uiState
 
     fun fetchCep(cep: String) {
         viewModelScope.launch {
