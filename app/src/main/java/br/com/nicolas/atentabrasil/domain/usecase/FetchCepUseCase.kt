@@ -9,10 +9,14 @@ import retrofit2.HttpException
 import java.io.IOException
 import javax.inject.Inject
 
-class FetchCepUseCase @Inject constructor(
+interface FetchCepUseCase {
+    operator fun invoke(cep: String): Flow<Resource<Cep>>
+}
+
+class FetchCepUseCaseImpl @Inject constructor(
     private val repository: BrazilRepository
-) {
-    operator fun invoke(cep: String): Flow<Resource<Cep>> = flow {
+) : FetchCepUseCase {
+    override operator fun invoke(cep: String): Flow<Resource<Cep>> = flow {
         try {
             emit(Resource.Loading(true))
             val response = repository.fetchCep(cep)

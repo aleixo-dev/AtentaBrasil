@@ -10,6 +10,12 @@ apply from: '../config/detekt/detekt.gradle'
 android {
     compileSdk 31
 
+    testOptions {
+        // Used for Unit testing Android dependent elements in /test folder
+        unitTests.includeAndroidResources  = true
+        unitTests.returnDefaultValues = true
+    }
+
     defaultConfig {
         applicationId "br.com.nicolas.atentabrasil"
         minSdk 23
@@ -68,5 +74,13 @@ dependencies {
 
     testImplementation 'junit:junit:4.13.2'
     androidTestImplementation 'androidx.test.ext:junit:1.1.3'
+    testImplementation 'androidx.test:core:1.4.0'
+    testImplementation 'org.jetbrains.kotlinx:kotlinx-coroutines-test:1.6.0'
+    testImplementation "com.nhaarman.mockitokotlin2:mockito-kotlin:2.2.0"
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.4.0'
+
+    testImplementation 'androidx.arch.core:core-testing:2.1.0'
+    testImplementation 'androidx.arch.core:core-runtime:2.1.0'
+
+    testImplementation "io.mockk:mockk:1.12.3"
 }

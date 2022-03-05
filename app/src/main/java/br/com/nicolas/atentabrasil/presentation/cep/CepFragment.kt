@@ -53,7 +53,7 @@ class CepFragment : Fragment() {
     @SuppressLint("SetTextI18n")
     private fun observeChangesInViewModel() {
         lifecycleScope.launch {
-            viewModel.uiState.collectLatest {
+            viewModel.uiState.observe(viewLifecycleOwner) {
                 binding.includeFlipper.flipperCep.displayedChild = when (it) {
                     is DataState.Loading -> {
                         FLIPPER_CHILD_LOADING
