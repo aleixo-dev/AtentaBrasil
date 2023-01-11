@@ -43,7 +43,7 @@ class CepFragment : Fragment() {
         binding.inputCep.editText?.addTextChangedListener { editable ->
             if (editable.isNullOrEmpty()) {
                 binding.includeFlipper.flipperCep.displayedChild = FLIPPER_CHILD_IMAGE
-            }else if(editable.length >= LENGTH_CHAR){
+            } else if (editable.length >= LENGTH_CHAR) {
                 viewModel.fetchCep(editable.toString())
                 observeChangesInViewModel()
             }
@@ -60,7 +60,7 @@ class CepFragment : Fragment() {
                     }
                     is DataState.Success -> {
                         binding.apply {
-                            it.cep.run {
+                            it.data.run {
                                 includeFlipper.textCep.text =
                                     "Cep: ${this.cep}\n" +
                                             "Estado: ${this.state}\n" +

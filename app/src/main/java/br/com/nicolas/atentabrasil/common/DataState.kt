@@ -1,9 +1,17 @@
 package br.com.nicolas.atentabrasil.common
 
-import br.com.nicolas.atentabrasil.data.response.Cep
+sealed class DataState<T> {
+    class Loading<T> : DataState<T>(){
+        override fun equals(other: Any?): Boolean {
+            if (this === other) return true
+            if (javaClass != other?.javaClass) return false
+            return true
+        }
 
-sealed class DataState {
-    data class Loading(val isLoading: Boolean = true) : DataState()
-    data class Success(val cep: Cep) : DataState()
-    data class Error(val error: String) : DataState()
+        override fun hashCode(): Int {
+            return javaClass.hashCode()
+        }
+    }
+    data class Success<T>(val data : T) : DataState<T>()
+    data class Error<T>(val error: String) : DataState<T>()
 }
